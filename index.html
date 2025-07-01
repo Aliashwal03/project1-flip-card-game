@@ -35,7 +35,6 @@
   <section class="content">
   <h1>flip card game</h1>
   <h2 id="message">Message</h2>
-  <button id="guid"></button>
     <section class="board">
     <div class="cards" id="0"></div>
     <div class="cards" id="1"></div>
@@ -54,10 +53,13 @@
     <div class="cards" id="14"></div>
     <div class="cards" id="15"></div>
   </section>
-
   <div class="right buttons">
   <button class="reset">reset the game</button>
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    How to Play
+  </button>
+    </div>
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
         <div class="modal-header">
@@ -65,22 +67,20 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-                <p><strong>1. Choose Your Move:</strong><br>
-                Tap one of the buttons to select your move: 🪨 Rock, 📄 Paper, or ✂️ Scissors.</p>
-                <p><strong>2. Wait for the <Re> </Re>sult:</strong><br>
-                The computer will randomly pick a move.</p>
-                <p><strong>3. Check Who Wins:</strong><br>
-                - 🪨 Rock beats ✂️ Scissors<br>
-                - ✂️ Scissors beats 📄 Paper<br>
-                - 📄 Paper beats 🪨 Rock<br>
-                - The same move is a tie!</p>
+            <p><strong>1. Choose Your Move:</strong><br>
+            Tap one of the buttons to select your move: 🪨 Rock, 📄 Paper, or ✂️ Scissors.</p>
+            <p><strong>2. Wait for the Result:</strong><br>
+            The computer will randomly pick a move.</p>
+            <p><strong>3. Check Who Wins:</strong><br>
+            - 🪨 Rock beats ✂️ Scissors<br>
+            - ✂️ Scissors beats 📄 Paper<br>
+            - 📄 Paper beats 🪨 Rock<br>
+            - The same move is a tie!</p>
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
         </div>
         </div>
-    </div>
-    </div>
     </div>
     </div>
   </section>
