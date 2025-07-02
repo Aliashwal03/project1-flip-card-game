@@ -15,7 +15,8 @@ body {
 .board {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  width: 400px; 
+  width: 540px;
+  gap: 10px;
 }
 
 .cards {
@@ -37,4 +38,13 @@ body {
   justify-content: flex-start;
   gap: 12px;
   z-index: 1000;
+}
+.left-side{
+  position: absolute;
+  top: 80px;
+  left: 40px;    
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 10px;
 }

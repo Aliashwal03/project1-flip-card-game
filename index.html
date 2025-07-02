@@ -7,6 +7,7 @@
   <script defer src="./js/app.js"></script>
   <title>flip card game</title>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
   <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
 </head>
@@ -33,8 +34,8 @@
 
 
   <section class="content">
-  <h1>flip card game</h1>
-  <h2 id="message">Message</h2>
+  <h1>flip cards game</h1>
+  <h2 id="message"></h2>
     <section class="board">
     <div class="cards" id="0"></div>
     <div class="cards" id="1"></div>
@@ -53,36 +54,47 @@
     <div class="cards" id="14"></div>
     <div class="cards" id="15"></div>
   </section>
+<!-- top right buttons, includes the reset button and "how to play" guidance -->
   <div class="right buttons">
-  <button class="reset">reset the game</button>
-  <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#exampleModal">
-    How to Play
-  </button>
+    <!-- reset button -->
+    <button type="button" id="reset" class="btn btn-info" ><i class="bi bi-arrow-counterclockwise"></i></button>
+    <!-- how to play button and it's content -->
+    <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi bi-question-circle"></i></button>
     </div>
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
         <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">How to Play</h1>
+            <h1 class="modal-title fs-5" id="exampleModalLabel">How To Play</h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-            <p><strong>1. Choose Your Move:</strong><br>
-            Tap one of the buttons to select your move: 🪨 Rock, 📄 Paper, or ✂️ Scissors.</p>
-            <p><strong>2. Wait for the Result:</strong><br>
-            The computer will randomly pick a move.</p>
-            <p><strong>3. Check Who Wins:</strong><br>
-            - 🪨 Rock beats ✂️ Scissors<br>
-            - ✂️ Scissors beats 📄 Paper<br>
-            - 📄 Paper beats 🪨 Rock<br>
-            - The same move is a tie!</p>
+          <p><strong>1. Objective:</strong><br>
+          Find all the matching pairs of cards by flipping them two at a time.</p>
+
+          <p><strong>2. How to Play:</strong><br>
+          - Click on a card to flip it.<br>
+          - Then click on a second card to try to find its match.<br>
+          - If both cards match, they will be highlited.<br>
+          - If they don't match, they flip back.</p>
+
+          <p><strong>3. Win Condition:</strong><br>
+          The game ends when all card pairs are matched correctly or the time is over.</p>
+
+          <p><strong>4. Tip:</strong><br>
+          Try to remember the location of each card you flip — it helps you find matches faster!</p>
         </div>
+
         <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
         </div>
         </div>
     </div>
     </div>
-  </section>
+      <section class="left-side">
+        <div id="timer" class="btn btn-info pointer-events-none"> 00:30</div>
+        <div id="counter"class="btn btn-info pointer-events-none"> 0 </div>
+      </section>
+      </section>
 </body>
 </html>
