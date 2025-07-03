@@ -22,7 +22,6 @@ let cardsCombo
 let win
 let attemps=0
 let timer
-let board
 let flippedCards = []; 
 let interval
 let matchedPairs = 0;
@@ -34,19 +33,22 @@ const cardsEls=document.querySelectorAll('.cards')
 const messageEl=document.querySelector('#message')
 const resetBtnEl=document.querySelector('#reset')
 const timerEl=document.querySelector('#timer')
-const counEl=document.querySelector('counter')
+const counEl=document.querySelector('#counter')
 
 /*-------------------------------- Functions --------------------------------*/
 function init() {
     cardsCombo = cards.sort(() => Math.random() - 0.5);
     win = false;
-    timer =10;
-    matchedPairs = 0;
+    timer =40;
+    matchedPairs = 0
+    attemps=0
+    messageEl.textContent=``
+    updateCounter()
     cardsEls.forEach((element, index) => {
         element.textContent = "?";           
         element.className = "cards";         
-        element.style.opacity = "1";        
     });
+    
     countdown()
 }
 
@@ -70,7 +72,7 @@ function handleCardClick(index) {
             compareFlipped();
         }, 400)
         attemps=attemps+1
-        cou
+        updateCounter()
     }
 }
 
@@ -83,28 +85,30 @@ function compareFlipped() {
         cardsEls[firstCard].className = "cards";
         cardsEls[secondCard].className = "cards";
     }
+    else{matchedPairs=matchedPairs+1}
     flippedCards = [];
-    console.log(flippedCards)
+    if (timer >= 0) winningLossCondition();
 
 }
 
-function winningLossCondition(){
-    if(timer >=0 &&flipCards.length==15){
-    win=true
-    messageEl.textContent=`congrats you did it`
-    return
+function winningLossCondition() {
+    if (matchedPairs === 8 && timer >= 0) { // Only win if time left
+        win = true;
+        messageEl.textContent = `🎉 Congrats, you did it!`;
+        clearInterval(interval);
+    } 
+    else if (timer < 0 && matchedPairs < 8) { 
+        messageEl.textContent = `You lost`;
+        win = true;
+        clearInterval(interval);
     }
-    else{
-        messageEl.textContent=`you lost`
-
-    }    
 }
 
 function countdown(){
     interval=setInterval(()=>{
     timerEl.textContent=timer
     timer=timer-1
-    if (timer==-1){
+    if (timer==-1 && !win){
         clearInterval(interval)
         messageEl.textContent=`Time is up u lost`
         cardsEls.forEach((element)=>{
@@ -116,15 +120,17 @@ function countdown(){
     },1000)
     
 }
+function updateCounter(){
+    counEl.textContent=attemps
+    
+}
 init()
 /*----------------------------- Event Listeners -----------------------------*/
 resetBtnEl.addEventListener('click',()=> {
     clearInterval(interval)
-    console.log(clearInterval(interval))
     init()
 })
 
 cardsEls.forEach((element, index) => {
     element.addEventListener('click', () => handleCardClick(index));
 });
-
