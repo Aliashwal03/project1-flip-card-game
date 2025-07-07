@@ -1,22 +1,23 @@
 /*-------------------------------- Constants --------------------------------*/
 const cards = [
-  { name: "apple", emoji: "🍎" },
-  { name: "apple", emoji: "🍎" },
-  { name: "car", emoji: "🚗" },
-  { name: "car", emoji: "🚗" },
-  { name: "dog", emoji: "🐶" },
-  { name: "dog", emoji: "🐶" },
-  { name: "pizza", emoji: "🍕" },
-  { name: "pizza", emoji: "🍕" },
-  { name: "cat", emoji: "🐱" },
-  { name: "cat", emoji: "🐱" },
-  { name: "balloon", emoji: "🎈" },
-  { name: "balloon", emoji: "🎈" },
-  { name: "game", emoji: "🎮" },
-  { name: "game", emoji: "🎮" },
-  { name: "rocket", emoji: "🚀" },
-  { name: "rocket", emoji: "🚀" }
+  { name: "spade", emoji: "♠️" },
+  { name: "spade", emoji: "♠️" },
+  { name: "heart", emoji: "♥️" },
+  { name: "heart", emoji: "♥️" },
+  { name: "club", emoji: "♣️" },
+  { name: "club", emoji: "♣️" },
+  { name: "diamond", emoji: "♦️" },
+  { name: "diamond", emoji: "♦️" },
+  { name: "joker", emoji: "🃏" },
+  { name: "joker", emoji: "🃏" },
+  { name: "ace", emoji: "🂡" },       
+  { name: "ace", emoji: "🂡" },
+  { name: "black_heart", emoji: "🖤" },
+  { name: "black_heart", emoji: "🖤" },
+  { name: "dice", emoji: "🎲" },
+  { name: "dice", emoji: "🎲" }
 ];
+
 /*---------------------------- Variables (state) ----------------------------*/
 let cardsCombo
 let win
