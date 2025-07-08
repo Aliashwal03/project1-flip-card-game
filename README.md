@@ -13,10 +13,8 @@ All cards are hidden at the start. Flip two cards at a time to find matching pai
 
 **Play the game here:** [Deployed Game Link](https://aliashwal03.github.io/flip-card-game/)
 
-**Project Planning Materials:**  
-- [Wireframes](./planning/wireframes.png)  
-- [User Stories](./planning/user-stories.md)  
-- [Trello Board](https://trello.com/your-board)
+**Project Planning Materials:**   
+- [Trello Board](https://trello.com/b/70GNunNz/project-1)
 
 **How to play:**
 1. Open the game using the link above.
@@ -29,10 +27,6 @@ All cards are hidden at the start. Flip two cards at a time to find matching pai
 - HTML
 - CSS
 - JavaScript
-
-## 📚 Attributions
-
-- [Twemoji](https://twemoji.twitter.com/) – for emoji icons used on the cards
 
 ## 🚧 Next Steps
 
