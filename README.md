@@ -11,7 +11,7 @@ All cards are hidden at the start. Flip two cards at a time to find matching pai
 
 ## 🚀 Getting Started
 
-**Play the game here:** [Deployed Game Link](https://your-deployment-link.com)
+**Play the game here:** [Deployed Game Link](https://aliashwal03.github.io/flip-card-game/)
 
 **Project Planning Materials:**  
 - [Wireframes](./planning/wireframes.png)  
